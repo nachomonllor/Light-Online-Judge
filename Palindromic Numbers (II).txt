@@ -1,0 +1,53 @@
+https://lightoj.com/problem/palindromic-numbers-ii
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp61
+{
+    class Program
+    {
+
+
+        static void Main(string[] args)
+        {
+            int T = int.Parse(Console.ReadLine().Trim());
+
+            int t = 1;
+            while(t <= T)
+            {
+                string num = Console.ReadLine().Trim();
+
+                int i = 0, j = num.Length - 1;
+                bool palin = true;
+                while(i < j)
+                {
+                    if (num[i] != num[j])
+                    {
+                        palin = false;
+                        break;
+                    }
+                    i++;
+                    j--;
+                }
+
+                if (palin)
+                {
+                    Console.WriteLine("Case {0}: Yes", t);
+                }
+                else
+                {
+                    Console.WriteLine("Case {0}: No", t);
+                }
+
+                t++;
+            }
+            
+            Console.ReadLine();
+        }
+    }
+}
